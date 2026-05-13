@@ -31,7 +31,7 @@ export function DeviceOverview() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card/50">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-balance">

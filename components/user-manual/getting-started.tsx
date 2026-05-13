@@ -1,15 +1,15 @@
 export function GettingStarted() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#05204A]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-balance">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#CAF0F8] mb-12 text-balance">
           Getting Started
         </h2>
 
         {/* Important Note */}
-        <div className="mb-12 p-6 rounded-lg border-2 border-primary bg-primary/10">
-          <h3 className="text-lg font-bold text-foreground mb-2">Important Note</h3>
-          <p className="text-foreground/90">
+        <div className="mb-12 p-6 rounded-lg border-2 border-[#45D6A8] bg-[#45D6A8]/10">
+          <h3 className="text-lg font-bold text-[#CAF0F8] mb-2">Important Note</h3>
+          <p className="text-[#CAF0F8]/90">
             Do NOT insert a SIM card into the device. The Edgkonnect communication system comes with a pre-installed embedded SIM providing connectivity out of the box.
           </p>
         </div>
@@ -17,13 +17,13 @@ export function GettingStarted() {
         {/* Step 1: Attaching Antenna */}
         <div className="mb-12">
           <div className="flex items-center gap-4 mb-6">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-white font-bold text-lg">1</div>
-            <h3 className="text-2xl font-bold text-foreground">Attaching the Antenna</h3>
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#0080E2] text-white font-bold text-lg">1</div>
+            <h3 className="text-2xl font-bold text-[#CAF0F8]">Attaching the Antenna</h3>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <ol className="space-y-3 list-decimal list-inside">
-                <li className="text-foreground/90">
+              <ol className="space-y-3 list-decimal list-inside text-[#CAF0F8]/90">
+                <li className="text-[#CAF0F8]/90">
                   Align the bottom of the antenna with the screw-in base on top of the PTT device.
                 </li>
                 <li className="text-foreground/90">
@@ -44,23 +44,23 @@ export function GettingStarted() {
         {/* Step 2: Charging */}
         <div className="mb-12">
           <div className="flex items-center gap-4 mb-6">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-white font-bold text-lg">2</div>
-            <h3 className="text-2xl font-bold text-foreground">Charging the Device</h3>
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#0080E2] text-white font-bold text-lg">2</div>
+            <h3 className="text-2xl font-bold text-[#CAF0F8]">Charging the Device</h3>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-foreground/90">
+              <p className="text-[#CAF0F8]/90">
                 Some Edgkonnect PTT units come pre-charged. However, if your device is not pre-charged:
               </p>
-              <ol className="space-y-3 list-decimal list-inside">
-                <li className="text-foreground/90">
+              <ol className="space-y-3 list-decimal list-inside text-[#CAF0F8]/90">
+                <li className="text-[#CAF0F8]/90">
                   Plug the USB-C charging cable into the USB-C port on the device.
                 </li>
                 <li className="text-foreground/90">
                   Alternatively, you can charge the device using a desktop charger (sold separately).
                 </li>
               </ol>
-              <p className="text-sm text-foreground/70 mt-4 font-semibold">
+              <p className="text-sm text-[#CAF0F8]/70 mt-4 font-semibold">
                 For optimal performance, charge for at least 30 minutes before first use.
               </p>
             </div>
@@ -77,14 +77,14 @@ export function GettingStarted() {
         {/* Step 3: Powering On */}
         <div>
           <div className="flex items-center gap-4 mb-6">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-white font-bold text-lg">3</div>
-            <h3 className="text-2xl font-bold text-foreground">Getting Started – Powering On</h3>
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#0080E2] text-white font-bold text-lg">3</div>
+            <h3 className="text-2xl font-bold text-[#CAF0F8]">Getting Started – Powering On</h3>
           </div>
           <div className="space-y-6">
-            <div className="p-6 rounded-lg border border-border bg-card/50">
-              <h4 className="font-bold text-foreground mb-3">Initial Setup</h4>
-              <ol className="space-y-3 list-decimal list-inside">
-                <li className="text-foreground/90">
+            <div className="p-6 rounded-lg border border-[#1a4a7a] bg-[#0a2d5c]/50">
+              <h4 className="font-bold text-[#CAF0F8] mb-3">Initial Setup</h4>
+              <ol className="space-y-3 list-decimal list-inside text-[#CAF0F8]/90">
+                <li className="text-[#CAF0F8]/90">
                   Hold the Power button for 3 seconds to turn on the device.
                 </li>
                 <li className="text-foreground/90">
@@ -93,10 +93,10 @@ export function GettingStarted() {
               </ol>
             </div>
 
-            <div className="p-6 rounded-lg border border-border bg-card/50">
-              <h4 className="font-bold text-foreground mb-3">Optimal Operation</h4>
-              <ol className="space-y-3 list-decimal list-inside">
-                <li className="text-foreground/90">
+            <div className="p-6 rounded-lg border border-[#1a4a7a] bg-[#0a2d5c]/50">
+              <h4 className="font-bold text-[#CAF0F8] mb-3">Optimal Operation</h4>
+              <ol className="space-y-3 list-decimal list-inside text-[#CAF0F8]/90">
+                <li className="text-[#CAF0F8]/90">
                   Hold the PTT device with the microphone approximately 10 centimeters away from your mouth when speaking for optimal audio clarity.
                 </li>
                 <li className="text-foreground/90">
