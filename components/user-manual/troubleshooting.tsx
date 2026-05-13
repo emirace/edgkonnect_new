@@ -1,157 +1,174 @@
+'use client'
+
 export function Troubleshooting() {
   const issues = [
     {
-      issue: "Device won't turn on",
+      issue: "Device won&apos;t turn on",
       cause: "Battery depleted",
       solution:
         "Charge via USB-C for at least 30 minutes before attempting to power on.",
+      severity: "critical",
     },
     {
       issue: "No audio / poor sound",
       cause: "Low volume or PTT held incorrectly",
       solution:
         "Press Volume Up (#12). Hold PTT ~10 cm from mouth. Use earpiece if needed.",
+      severity: "warning",
     },
     {
       issue: "Screen is blank",
       cause: "Sleep mode active",
       solution:
         "Press the Power button briefly to wake the screen.",
+      severity: "info",
     },
     {
       issue: "Cannot connect to group",
       cause: "Network / SIM issue",
       solution:
-        "Ensure you are in an LTE coverage area. Contact customercare@edgkonnect.com.",
+        "Ensure you are in an LTE coverage area. Contact support@edgkonnect.com.",
+      severity: "critical",
     },
     {
       issue: "SOS not sending",
       cause: "Out of range or dispatcher offline",
       solution:
         "Confirm LTE signal and dispatcher status. Contact support if issue persists.",
+      severity: "critical",
     },
     {
       issue: "Device overheating",
       cause: "Extreme ambient temperature",
       solution:
         "Move to a cooler environment. Never leave in direct sunlight (>85°C).",
+      severity: "warning",
     },
   ];
 
+  const getSeverityStyles = (severity: string) => {
+    switch (severity) {
+      case "critical":
+        return "border-[#ef4444]/30 bg-[#ef4444]/5";
+      case "warning":
+        return "border-[#0080E2]/30 bg-[#0080E2]/5";
+      default:
+        return "border-[#45D6A8]/30 bg-[#45D6A8]/5";
+    }
+  };
+
+  const getSeverityIcon = (severity: string) => {
+    switch (severity) {
+      case "critical":
+        return "🔴";
+      case "warning":
+        return "🟡";
+      default:
+        return "🟢";
+    }
+  };
+
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-balance">
-          Troubleshooting & Support
-        </h2>
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Section header */}
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#05204A] mb-4">
+            Troubleshooting & Support
+          </h2>
+          <p className="text-lg text-[#05204A]/70 font-light">
+            Quick solutions to common issues and when to contact support
+          </p>
+        </div>
 
         {/* Troubleshooting Table */}
-        <div className="mb-16 overflow-x-auto rounded-lg border border-border">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-secondary text-white">
-                <th className="px-6 py-4 text-left font-semibold">Issue</th>
-                <th className="px-6 py-4 text-left font-semibold">Possible Cause</th>
-                <th className="px-6 py-4 text-left font-semibold">Solution</th>
-              </tr>
-            </thead>
-            <tbody>
-              {issues.map((item, idx) => (
-                <tr
-                  key={idx}
-                  className={`border-b border-border ${
-                    idx % 2 === 0 ? "bg-background/30" : "bg-background/50"
-                  } hover:bg-background/70 transition-colors`}
-                >
-                  <td className="px-6 py-4 font-semibold text-foreground">{item.issue}</td>
-                  <td className="px-6 py-4 text-foreground/80">{item.cause}</td>
-                  <td className="px-6 py-4 text-foreground/80">{item.solution}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-[#05204A] mb-8">Common Issues & Solutions</h3>
+          
+          <div className="space-y-4">
+            {issues.map((item, idx) => (
+              <div
+                key={idx}
+                className={`p-6 rounded-xl border transition-all hover:shadow-md ${getSeverityStyles(item.severity)}`}
+              >
+                <div className="grid md:grid-cols-4 gap-6 items-start">
+                  {/* Issue */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-xl">{getSeverityIcon(item.severity)}</span>
+                      <h4 className="font-semibold text-[#05204A]">{item.issue}</h4>
+                    </div>
+                  </div>
 
-        {/* Contact Support */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="p-8 rounded-lg bg-background border-2 border-primary">
-            <h3 className="text-xl font-bold text-foreground mb-4">For More Information</h3>
-            <p className="text-foreground/90 mb-4">
-              Visit our website for technical documentation, FAQs, and additional resources.
-            </p>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Visit Edgkonnect Website
-              <span>→</span>
-            </a>
-          </div>
+                  {/* Cause */}
+                  <div>
+                    <p className="text-xs font-semibold text-[#05204A]/60 uppercase tracking-wider mb-1">
+                      Possible Cause
+                    </p>
+                    <p className="text-[#05204A]/80 text-sm">{item.cause}</p>
+                  </div>
 
-          <div className="p-8 rounded-lg bg-background border-2 border-secondary">
-            <h3 className="text-xl font-bold text-foreground mb-4">Technical Support</h3>
-            <p className="text-foreground/90 mb-4">
-              Need immediate assistance? Contact our support team for help.
-            </p>
-            <a
-              href="mailto:customercare@edgkonnect.com"
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-secondary text-white font-semibold hover:bg-secondary/90 transition-colors"
-            >
-              Email Support
-              <span>→</span>
-            </a>
+                  {/* Solution */}
+                  <div className="md:col-span-2">
+                    <p className="text-xs font-semibold text-[#05204A]/60 uppercase tracking-wider mb-1">
+                      Solution
+                    </p>
+                    <p className="text-[#05204A]/80 text-sm leading-relaxed">{item.solution}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Key Reminders */}
-        <div className="bg-gradient-to-r from-primary/5 to-secondary/5 border-l-4 border-primary rounded-r-lg p-8">
-          <h3 className="text-xl font-bold text-foreground mb-6">Key Reminders</h3>
-          <ul className="space-y-4">
-            <li className="flex gap-3">
-              <span className="text-primary font-bold text-xl leading-none">✓</span>
-              <span className="text-foreground/90">
-                Keep the device in LTE coverage areas for reliable connectivity.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary font-bold text-xl leading-none">✓</span>
-              <span className="text-foreground/90">
-                Charge the device regularly to maintain optimal performance.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary font-bold text-xl leading-none">✓</span>
-              <span className="text-foreground/90">
-                Do NOT insert third-party SIM cards into the device.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary font-bold text-xl leading-none">✓</span>
-              <span className="text-foreground/90">
-                Use the SOS button only in genuine emergency situations.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary font-bold text-xl leading-none">✓</span>
-              <span className="text-foreground/90">
-                Protect the device from extreme temperatures and direct sunlight.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary font-bold text-xl leading-none">✓</span>
-              <span className="text-foreground/90">
-                Use only authorized Edgkonnect chargers and accessories.
-              </span>
-            </li>
-          </ul>
-        </div>
+        {/* Support Contact Section */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Support Information */}
+          <div className="p-8 rounded-xl border border-[#45D6A8]/30 bg-[#45D6A8]/10">
+            <h3 className="text-2xl font-bold text-[#05204A] mb-6">Need More Help?</h3>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm font-semibold text-[#05204A]/60 uppercase tracking-wider mb-2">
+                  Technical Support
+                </p>
+                <p className="text-[#05204A]/80 mb-1">Email:</p>
+                <a href="mailto:support@edgkonnect.com" className="text-[#0080E2] hover:text-[#0080E2]/80 font-medium">
+                  support@edgkonnect.com
+                </a>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[#05204A]/60 uppercase tracking-wider mb-2">
+                  Response Time
+                </p>
+                <p className="text-[#05204A]/80">
+                  We aim to respond to all inquiries within 24 hours during business days.
+                </p>
+              </div>
+            </div>
+          </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-border text-center text-foreground/60 text-sm">
-          <p>© Edgkonnect {new Date().getFullYear()}. All rights reserved.</p>
-          <p className="mt-2">
-            Complete Push-to-Talk Communication Solution designed for mission-critical operations.
-          </p>
+          {/* Quick Tips */}
+          <div className="p-8 rounded-xl border border-[#0080E2]/30 bg-[#0080E2]/10">
+            <h3 className="text-2xl font-bold text-[#05204A] mb-6">Before You Contact Support</h3>
+            <ul className="space-y-4">
+              <li className="flex gap-4">
+                <span className="text-[#0080E2] font-bold text-lg">✓</span>
+                <span className="text-[#05204A]/80">Verify you have LTE/4G signal coverage</span>
+              </li>
+              <li className="flex gap-4">
+                <span className="text-[#0080E2] font-bold text-lg">✓</span>
+                <span className="text-[#05204A]/80">Check that the device is fully charged</span>
+              </li>
+              <li className="flex gap-4">
+                <span className="text-[#0080E2] font-bold text-lg">✓</span>
+                <span className="text-[#05204A]/80">Restart the device by powering off and on</span>
+              </li>
+              <li className="flex gap-4">
+                <span className="text-[#0080E2] font-bold text-lg">✓</span>
+                <span className="text-[#05204A]/80">Verify you are within a group and not blocked</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

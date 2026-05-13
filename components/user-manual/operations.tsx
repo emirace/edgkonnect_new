@@ -1,3 +1,5 @@
+'use client'
+
 export function Operations() {
   const oneToOneSteps = [
     {
@@ -30,94 +32,83 @@ export function Operations() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-balance">
-          Device Operations
-        </h2>
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Section header */}
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#05204A] mb-4">
+            Device Operations
+          </h2>
+          <p className="text-lg text-[#05204A]/70 font-light">
+            Learn how to make calls, switch groups, and use emergency functions
+          </p>
+        </div>
 
-        {/* One-to-One Calls */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">Starting a One-to-One (PTT) Call</h3>
-          <p className="text-foreground/80 mb-8">
-            This is a simple PTT session involving just one caller and one recipient.
+        {/* One-to-One Calls Section */}
+        <div className="mb-24">
+          <h3 className="text-3xl font-bold text-[#05204A] mb-4">One-to-One PTT Calls</h3>
+          <p className="text-[#05204A]/70 mb-8 leading-relaxed">
+            Initiate direct calls with individual users. This is a simple PTT session involving just one caller and one recipient.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            {/* Steps */}
-            <div className="space-y-3">
-              {oneToOneSteps.map((item) => (
-                <div key={item.step} className="flex gap-4 p-4 rounded-lg bg-background/50 border border-border">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-secondary text-white font-bold flex-shrink-0">
-                    {item.step}
+          {/* Steps as Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+            {oneToOneSteps.map((step) => (
+              <div key={step.step} className="relative">
+                {/* Connection line for desktop */}
+                {step.step < oneToOneSteps.length && (
+                  <div className="hidden lg:block absolute top-8 left-[60%] w-[calc(100%+8px)] h-0.5 bg-gradient-to-r from-[#0080E2] to-transparent"></div>
+                )}
+                
+                <div className="p-6 rounded-xl border border-[#05204A]/10 hover:border-[#0080E2]/30 hover:shadow-lg transition-all bg-gradient-to-br from-white to-[#05204A]/3">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-[#0080E2] to-[#45D6A8] text-white font-bold mb-4 mx-auto">
+                    {step.step}
                   </div>
-                  <div className="flex-grow">
-                    <h4 className="font-semibold text-foreground">{item.title}</h4>
-                    <p className="text-sm text-foreground/70">{item.description}</p>
-                  </div>
+                  <h4 className="font-semibold text-[#05204A] mb-3 text-center text-sm">{step.title}</h4>
+                  <p className="text-sm text-[#05204A]/70 text-center leading-relaxed">{step.description}</p>
                 </div>
-              ))}
-            </div>
-
-            {/* Image */}
-            <div className="flex justify-center">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3997-6JNL8c4wrCGV7pQVNy0nCjwPCwjgJK.jpeg"
-                alt="Starting a one-to-one call instructions"
-                className="max-w-sm w-full rounded-lg"
-              />
-            </div>
-          </div>
-
-          {/* Sleep Mode Note */}
-          <div className="mt-8 p-6 rounded-lg border border-border bg-background/30">
-            <h4 className="font-semibold text-foreground mb-2">Screen Sleep Mode</h4>
-            <p className="text-foreground/80">
-              The Edgkonnect MCPT-1-XC screen will go to sleep mode after 5 minutes of inactivity to save battery and extend operational hours. You can still use the power on/off key to wake up the screen. You can still use the unit perfectly with the screen off, which will save battery and extend the unit&apos;s operational hours.
-            </p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Switching Between Groups */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">Switching Between Groups</h3>
-          <div className="p-6 rounded-lg border-2 border-primary bg-primary/10 mb-6">
-            <p className="text-foreground/90 leading-relaxed">
+        {/* Switching Groups Section */}
+        <div className="mb-24">
+          <h3 className="text-3xl font-bold text-[#05204A] mb-4">Switching Between Groups</h3>
+          <div className="p-8 rounded-xl border border-[#05204A]/10 bg-gradient-to-br from-[#05204A]/5 to-transparent">
+            <p className="text-[#05204A]/80 mb-6 leading-relaxed">
               Rotate the Rotary Knob (Control #1) to cycle through available groups. The current group name will be displayed on screen. After a 1-to-1 call, press the Back to Group Call button (#8) to return to group communications.
             </p>
-          </div>
-
-          <div className="p-6 rounded-lg bg-background/50 border border-border">
-            <h4 className="font-bold text-foreground mb-3 text-lg">Additional Usage Tips</h4>
-            <ul className="space-y-3">
-              <li className="flex gap-3">
-                <span className="inline-block w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-foreground/90">
-                  <strong>Press the PTT button</strong> to initiate a call.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="inline-block w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-foreground/90">
-                  <strong>Listen via the PTT speaker or earphone.</strong>
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="inline-block w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-foreground/90">
-                  <strong>In a noisy environment,</strong> speak into the microphone or move the PTT closer to your mouth for better communication.
-                </span>
-              </li>
-            </ul>
+            <div className="flex gap-2 flex-wrap">
+              <div className="px-4 py-2 rounded-lg bg-white border border-[#0080E2]/20">
+                <span className="text-[#0080E2] font-semibold text-sm">Tip:</span>
+                <span className="text-[#05204A]/70 text-sm ml-2">You can quickly switch groups while on an active call</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* SOS Emergency Function */}
-        <div className="p-6 rounded-lg border-2 border-destructive bg-destructive/10">
-          <h3 className="text-xl font-bold text-destructive mb-3">SOS Emergency Function</h3>
-          <p className="text-foreground/90 leading-relaxed">
-            Press the SOS button (#14) to immediately send an SOS alert to the App-Based Mobile Dispatcher or Mission Critical Group Communication Windows Dispatcher. <strong>Use only in genuine emergencies.</strong>
-          </p>
+        {/* Emergency Function Section */}
+        <div>
+          <h3 className="text-3xl font-bold text-[#05204A] mb-4">Emergency SOS Function</h3>
+          <div className="p-8 rounded-xl border-2 border-[#ef4444]/30 bg-[#ef4444]/5">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#ef4444]/20">
+                  <span className="text-[#ef4444] font-bold">⚠</span>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-bold text-[#05204A] mb-2">SOS Button (#14)</h4>
+                <p className="text-[#05204A]/80 leading-relaxed mb-4">
+                  Press the SOS button to immediately send an SOS alert to the App-Based Mobile Dispatcher or Mission Critical Group Communication Windows Dispatcher. Use only in genuine emergencies. This action will override normal operations and prioritize your emergency communication.
+                </p>
+                <p className="text-sm text-[#05204A]/70 italic">
+                  Emergency alerts are always transmitted with the highest priority and encryption level.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
