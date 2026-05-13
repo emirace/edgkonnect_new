@@ -22,12 +22,11 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Solutions", href: "#solutions" },
-    { label: "Why Us", href: "#why-us" },
-    { label: "Industries", href: "#industries" },
-    { label: "User Manual", href: "/user-manual" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/#about" },
+    { label: "Solutions", href: "/#solutions" },
+    { label: "Why Us", href: "/#why-us" },
+    { label: "Industries", href: "/#industries" },
   ];
 
   return (
@@ -43,7 +42,7 @@ export function Navigation() {
           className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14 md:h-16" : "h-16 md:h-20"}`}
         >
           {/* Logo */}
-          <a href="#home" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src="/logo_full.png"
               alt="EdgKonnect"
