@@ -28,7 +28,7 @@ export function DeviceOverview() {
     {
       num: 5,
       name: "Display",
-      function: "Screen showing status and user information",
+      function: "Screen showing status and user information ",
     },
     {
       num: 6,
