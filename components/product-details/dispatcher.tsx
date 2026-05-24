@@ -30,7 +30,7 @@ export function Dispatcher() {
               <p className="text-lg text-[#05204A]/70 leading-relaxed">
                 Large multi-display dispatcher for terminals and wide spaces.
                 Integrated audio input/output with live tracking, satellite view
-                maps, and comprehensive playback history.
+                maps, and comprehensive playback history
               </p>
             </div>
 
