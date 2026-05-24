@@ -104,7 +104,7 @@ export function Footer() {
             © {currentYear} EdgKonnect. All rights reserved.
           </p>
           <p className="text-[#CAF0F8]/40 text-sm">
-            Powered by Vantage Creative Media
+            Powered by Vintage Marketing Agency
           </p>
           <div className="flex items-center gap-6">
             <a
