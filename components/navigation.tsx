@@ -27,7 +27,6 @@ export function Navigation() {
     { label: "Solutions", href: "#solutions" },
     { label: "Why Us", href: "#why-us" },
     { label: "Industries", href: "#industries" },
-    { label: "Product", href: "/product-details" },
     { label: "User Manual", href: "/user-manual" },
   ];
 
