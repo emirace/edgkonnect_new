@@ -81,14 +81,14 @@ export function Footer() {
               <Phone className="w-4 h-4 text-[#45D6A8] shrink-0 mt-0.5" />
               <div className="text-sm">
                 <p>09064045984</p>
-                <p>+234 818 003 8417</p>
+                <p>07038605237</p>
               </div>
             </div>
             <div className="flex items-start gap-3 text-[#CAF0F8]/60">
               <MapPin className="w-4 h-4 text-[#45D6A8] shrink-0 mt-0.5" />
               <div className="text-sm">
                 <p className="font-medium text-[#CAF0F8]/80">Abuja Office:</p>
-                <p>3914 Olayinka Olukoya Street, CRD Lugbe, Abuja</p>
+                <p>101B Ebitu Ukiwe Street Jabi Abuja</p>
                 <p className="font-medium text-[#CAF0F8]/80 mt-2">
                   Lagos Office:
                 </p>
